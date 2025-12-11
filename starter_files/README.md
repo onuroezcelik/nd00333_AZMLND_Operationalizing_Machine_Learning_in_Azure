@@ -1,9 +1,19 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+# Operationalizing Machine Learning
 
+In this project, a cloud-based machine learning production model is configured, deployed, and consumed in Azure. Furthermore a pipeline is created, published, and consumed.
+A bank marketing dataset from https://archive.ics.uci.edu/dataset/222/bank+marketing is used for the model training.
 
-# Your Project Title Here
+The following steps are performed:
 
-*TODO:* Write an overview to your project.
+1. Authentication
+2. Automated ML Experiment
+3. Deploy the best model
+4. Enable logging
+5. Swagger Documentation
+6. Consume model endpoints
+7. Create and publish a pipeline
+8. Documentation
+  
 
 ## Architectural Diagram
 *TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
