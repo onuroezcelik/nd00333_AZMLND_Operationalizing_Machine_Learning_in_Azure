@@ -24,7 +24,7 @@ The following steps are performed:
 
    The project lab is used to complete the project. Therefore this step is skipped since I am not authorized to create a security principal.
 
-3. Automated ML Experiment
+2. Automated ML Experiment
 
    Azure Machine Learning GUI is used to create a new automated ML run.
 
@@ -78,19 +78,66 @@ The following steps are performed:
     
      ![](images/05_automl_review.png)
     
-   2.5 Finding best model
+   2.6 Finding best model
    - As a result of submitted job, the best performing model is provided as VotingEnsemble shown below.
 
      ![](images/06_best_model.png)
     
-    The metrics of the best model is reviewed
+   - The metrics of the best model is reviewed
+
     ![](images/06_best_model_metrics.png)
     
-    2.6 Deployment of the best model
-    The deployment of the best model is started by selecting the followng settings
-    - Compute type is selected as ACI
-    - Authentication is enabled
-    ![](images/07_best_model_deployment.png)
+3. Deployment of the best model
+   - Starting a deployment as a web service
+     The deployment of the best model is started by selecting the followng settings
+     - Define a name for the deployment. I named it as "bestmodeldeploy".
+     - Compute type is selected as ACI
+     - Authentication is enabled
+
+       ![](images/3_best_model_deployment.png)
+
+   - Deployment is succeeded.
+     
+     ![](images/3_best_model_deployment_succeeded.png)
+
+   - Application insights is disabled.
+
+     ![](images/3_best_model_deployment_succeeded_app_insights_false.png)
+
+4. Enabling logging
+   log.py is updated to enable Application insights by modifiying the deployment name to "bestmodeldeploy"
+   ![](images/4_enable_logging.png)
+
+   Application insights is now enabled after running log.py
+   ![](images/4_application_insigts_enabled.png)
+
+5. Consume model points
+   5.1 Downloading swagger.json file
+   
+   ![](images/5.1_downloading_swagger_json.png)
+
+   5.2 Running swagger.sh file
+
+   ![](images/5.2_editing_swagger_bh.png)
+   ![](images/5.2_running_swagger_bh.png)
+
+   5.3 Running serve.py file
+
+   ![](images/5.2_running_serve.png)
+
+   5.4 Swagger UI
+   
+   ![](images/5.4_swagger_ui.png)
+   ![](images/5.4_swagger_ui_score.png)
+   
+   5.5 Running endpoint.py file
+   
+   ![](images/5.5_editing_endpoint_py_1.png)
+   ![](images/5.5_editing_endpoint_py_2.png)
+   ![](images/5.5_running_endpoint_py.png)
+  
+7. Create and publish a pipeline
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
