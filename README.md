@@ -17,8 +17,6 @@ The following steps are performed:
 
 ![](images/project_main_steps.png)
 
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
-
 ## Key Steps
 ### 1. Authentication
 
@@ -111,8 +109,15 @@ The following steps are performed:
   ![](images/4_application_insigts_enabled.png)
 
 ### 5. Consume Model Points
+This section describes how the deployed machine learning model is accessed and tested
+through its REST API endpoint.
 
    #### 5.1. Downloading swagger.json file
+   After the model is successfully deployed, Azure Machine Learning automatically generates a `swagger.json` file that describes the REST API interface of the deployed service.
+   This file contains details about the available endpoints, request and response schemas, and input data formats.
+
+   The `swagger.json` file is downloaded from the Azure Machine Learning Studio and can be used to visualize and test the model endpoint using tools such as Swagger UI.
+   This step helps verify that the endpoint is functioning correctly and that requests are formatted as expected.
    
    ![](images/5.1_downloading_swagger_json.png)
 
