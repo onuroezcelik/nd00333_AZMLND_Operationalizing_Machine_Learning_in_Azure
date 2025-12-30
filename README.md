@@ -20,26 +20,26 @@ The following steps are performed:
 *TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
 
 ## Key Steps
-# 1. Authentication
+### 1. Authentication
 
    The project lab is used to complete the project. Therefore this step is skipped since I am not authorized to create a security principal.
 
-# 2. Automated ML Experiment
+### 2. Automated ML Experiment
 
    Azure Machine Learning GUI is used to create a new automated ML run.
    
-   ## 2.1. Basic settings
+   #### 2.1. Basic settings
    - Experiment name is defined at the step of "Basic Settings"
      
      ![](images/2.1_basic_settings.png)
 
-   ## 2.2. Task type and data
+   #### 2.2. Task type and data
    - Task type is selected as classification.
    - The data asset is registered by locally uploading the csv file from https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset
      
      ![](images/2.2_task_type_n_data.png)
 
-   ## 2.3. Task settings
+   #### 2.3. Task settings
    - The target column is selected as "deposit"
      
      ![](images/2.3_task_settings.png)
@@ -65,7 +65,7 @@ The following steps are performed:
        
        ![](images/2.3_task_settings_validate_test.png)
    
-   ## 2.4. Compute cluster
+   #### 2.4. Compute cluster
    - A compute cluster is needed to run the automated ml models.
      - Standard_DS2_v2 is selected as optimal performance
      - minimum number of nodes is set to 1 as expected from the objectives of the project
@@ -73,17 +73,17 @@ The following steps are performed:
 
        ![](images/2.4_compute_cluster_settings.png)
    
-   ## 2.5. Submit the job
+   #### 2.5. Submit the job
    - After a final review of all automl settings, the job is submitted
     
      ![](images/2.5_automl_review.png)
     
-   ## 2.6. Finding best model
+   #### 2.6. Finding best model
    - As a result of submitted job, the best performing model is provided as VotingEnsemble shown below.
 
      ![](images/2.6_best_model.png)
     
-# 3. Deployment of the Best Model
+### 3. Deployment of the Best Model
    - Starting a deployment as a web service
      The deployment of the best model is started by selecting the followng settings
      - Define a name for the deployment. I named it as "bestmodeldeploy".
@@ -100,7 +100,7 @@ The following steps are performed:
 
      ![](images/3_best_model_deployment_succeeded_app_insights_false.png)
 
-# 4. Enabling Logging
+### 4. Enabling Logging
 
 - log.py is updated to enable Application insights by modifiying the deployment name to "bestmodeldeploy"
 
@@ -110,33 +110,33 @@ The following steps are performed:
 
   ![](images/4_application_insigts_enabled.png)
 
-# 5. Consume Model Points
+### 5. Consume Model Points
 
-   ## 5.1. Downloading swagger.json file
+   #### 5.1. Downloading swagger.json file
    
    ![](images/5.1_downloading_swagger_json.png)
 
-   ## 5.2. Running swagger.sh file
+   #### 5.2. Running swagger.sh file
 
    ![](images/5.2_editing_swagger_bh.png)
    ![](images/5.2_running_swagger_bh.png)
 
-   ## 5.3. Running serve.py file
+   #### 5.3. Running serve.py file
 
    ![](images/5.3_running_serve.png)
 
-   ## 5.4. Swagger UI
+   #### 5.4. Swagger UI
    
    ![](images/5.4_swagger_ui.png)
    ![](images/5.4_swagger_ui_score.png)
    
-   ## 5.5. Running endpoint.py file
+   #### 5.5. Running endpoint.py file
    
    ![](images/5.5_editing_endpoint_py_1.png)
    ![](images/5.5_editing_endpoint_py_2.png)
    ![](images/5.5_running_endpoint_py.png)
   
-# 6. Create and Publish a Pipeline
+### 6. Create and Publish a Pipeline
 
 
 ## Screen Recording
