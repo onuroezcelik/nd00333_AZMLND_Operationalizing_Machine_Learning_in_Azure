@@ -65,7 +65,7 @@ The following steps are performed:
    
    #### 2.4. Compute cluster
    - A compute cluster is needed to run the automated ml models.
-     - Standard_DS2_v2 is selected as optimal performance
+     - Standard_D2S_v3 is selected as optimal performance
      - minimum number of nodes is set to 1 as expected from the objectives of the project
      - maximum number of nodes is set to 6 at least for 5 concurrent runs
 
