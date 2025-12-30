@@ -1,7 +1,7 @@
 # Operationalizing Machine Learning
 
 In this project, a cloud-based machine learning production model is configured, deployed, and consumed in Azure. Furthermore a pipeline is created, published, and consumed.
-A bank marketing dataset from https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset is used for the model training.
+A bank marketing dataset from https://archive.ics.uci.edu/dataset/222/bank+marketing is used for the model training.
 
 ## Architectural Diagram
 The following steps are performed:
@@ -33,17 +33,17 @@ The following steps are performed:
 
    #### 2.2. Task type and data
    - Task type is selected as classification.
-   - The data asset is registered by locally uploading the csv file from https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset
+   - The data asset is registered by locally uploading the csv file from https://archive.ics.uci.edu/dataset/222/bank+marketing
      
      ![](images/2.2_task_type_n_data.png)
 
    #### 2.3. Task settings
-   - The target column is selected as "deposit"
+   - The target column is selected as "y"
      
      ![](images/2.3_task_settings.png)
 
    - Additional configuration settings is done by
-     - selecting "Primary metric" as "Accuracy"
+     - selecting "Primary metric" as "AUCWeighted"
      - checking "Explain best model" is enabled
        
        ![](images/2.3_task_settings_additional_configuration.png)
