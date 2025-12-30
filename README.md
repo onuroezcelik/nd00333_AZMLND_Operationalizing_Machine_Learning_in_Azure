@@ -140,7 +140,11 @@ The following steps are performed:
 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+Due to company policy restrictions, screen recording is not permitted in the working environment.  
+Therefore, a screen recording of the project execution cannot be provided.
+
+The project functionality and workflow are instead demonstrated through detailed screenshots
+and step-by-step explanations throughout this README.
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
