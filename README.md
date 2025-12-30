@@ -122,12 +122,19 @@ through its REST API endpoint.
    ![](images/5.1_downloading_swagger_json.png)
 
    #### 5.2. Running swagger.sh file
-
+   The `swagger.sh` script is used to launch a local instance of **Swagger UI** to interactively explore and test the deployed model endpoint.
+   Originally, port 80 was used, but it was changed to 9000
+   
    ![](images/5.2_editing_swagger_bh.png)
+
+   To run the script, the following command is executed in **Git Bash**:
+   bash swagger.sh
    ![](images/5.2_running_swagger_bh.png)
 
    #### 5.3. Running serve.py file
 
+   To run the script, the following command is executed in **Git Bash**:
+   python serve.py
    ![](images/5.3_running_serve.png)
 
    #### 5.4. Swagger UI
