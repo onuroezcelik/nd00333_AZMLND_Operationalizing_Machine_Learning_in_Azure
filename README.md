@@ -1,7 +1,17 @@
 # Operationalizing Machine Learning
 
-In this project, a cloud-based machine learning production model is configured, deployed, and consumed in Azure. Furthermore a pipeline is created, published, and consumed.
-A bank marketing dataset from https://archive.ics.uci.edu/dataset/222/bank+marketing is used for the model training.
+The project focuses on a bank marketing campaign. The goal is to predict whether a client will subscribe to a term deposit based on direct marketing campaigns (phone calls) using an automated machine learning solution in Azure. The dataset from "https://archive.ics.uci.edu/dataset/222/bank+marketing" is uploaded to ML Studio, an **AutoML** job is run to find the best model, which is then deployed as a **REST endpoint** for real-time consumption. Additionally, a pipeline automates the workflow from data preprocessing to deployment, ensuring repeatability, scalability, and easy maintenance. This project demonstrates the full lifecycle of a machine learning solution, from data preparation and model training to deployment and integration.
+
+## Project Justification
+
+Direct marketing campaigns are costly and time-consuming. Banks need to target clients more effectively to increase subscription rates for term deposits. By predicting client responses, the project enables the bank to focus resources on clients most likely to subscribe, improving campaign efficiency and return on investment.
+
+## Objectives
+
+- Predict client responses to marketing campaigns accurately.
+- Deploy an automated, scalable machine learning model in Azure.
+- Implement a repeatable ML workflow using pipelines.
+- Enable real-time predictions via REST endpoints.
 
 ## Architectural Diagram
 The following steps are performed:
