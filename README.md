@@ -42,11 +42,11 @@ The following steps are performed:
      ![](images/2.1_basic_settings.png)
 
    #### 2.2. Task type and data
-   - Task type is selected as classification.
    - The data asset is registered by locally uploading the csv file from "https://archive.ics.uci.edu/dataset/222/bank+marketing".
 
      ![](images/2.2_bankmarketing_dataset.png)
-     
+
+   - Task type is selected as classification.
    - Then the dataset is selected while creating AutoML job
      
      ![](images/2.2_task_type_n_data.png)
