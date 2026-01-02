@@ -33,12 +33,12 @@ The following steps are performed:
 
    #### 2.2. Task type and data
    - Task type is selected as classification.
-   - The data asset is registered by locally uploading the csv file from https://archive.ics.uci.edu/dataset/222/bank+marketing
+   - The data asset is registered by locally uploading the csv file from "https://archive.ics.uci.edu/dataset/222/bank+marketing".
      
      ![](images/2.2_task_type_n_data.png)
 
    #### 2.3. Task settings
-   - The target column is selected as "y"
+   - The target column is selected as "y".
      
      ![](images/2.3_task_settings.png)
 
@@ -64,7 +64,7 @@ The following steps are performed:
        ![](images/2.3_task_settings_validate_test.png)
    
    #### 2.4. Compute cluster
-   - A compute cluster is needed to run the automated ml models.
+   - A compute cluster is needed to run the automated ml job.
      - Standard_D2S_v3 is selected as optimal performance
      - minimum number of nodes is set to 1 as expected from the objectives of the project
      - maximum number of nodes is set to 6 at least for 5 concurrent runs
@@ -72,7 +72,7 @@ The following steps are performed:
        ![](images/2.4_compute_cluster_settings.png)
    
    #### 2.5. Submit the job
-   - After a final review of all automl settings, the job is submitted
+   - After a final review of all automl settings, the job is submitted.
     
      ![](images/2.5_automl_review.png)
     
@@ -82,29 +82,31 @@ The following steps are performed:
      ![](images/2.6_best_model.png)
     
 ### 3. Deployment of the Best Model
-   - Starting a deployment as a web service
-     The deployment of the best model is started by selecting the followng settings
-     - Define a name for the deployment. I named it as "bestmodeldeploy".
-     - Compute type is selected as ACI
-     - Authentication is enabled
+- Starting a deployment as a web service
 
-       ![](images/3_best_model_deployment.png)
+  The deployment of the best model is started by selecting the followng settings:
+  - Define a name for the deployment. I named it as "bestmodeldeploy".
+  - Compute type is selected as ACI.
+  - Authentication is enabled.
 
-   - Deployment is succeeded.
-     
-     ![](images/3_best_model_deployment_succeeded.png)
+    ![](images/3_best_model_deployment.png)
 
-   - Application insights is disabled.
+- Deployment is succeeded.
+  
+  ![](images/3_best_model_deployment_succeeded.png)
 
-     ![](images/3_best_model_deployment_succeeded_app_insights_false.png)
+- "Application Insights enabled" is set to false as default.
+
+  ![](images/3_best_model_deployment_succeeded_app_insights_false.png)
 
 ### 4. Enabling Logging
-
-- log.py is updated to enable Application insights by modifiying the deployment name to "bestmodeldeploy"
+- Enabling Application Insights allows to review operational data such as request traces, response times, exceptions, and failure rates. This visibility is essential for monitoring the health and performance of the deployed service, diagnosing runtime issues, and ensuring reliable operation in production environments. To do this, the file log.py is updated to enable Application Insights by:
+   - modifiying the deployment name to "bestmodeldeploy"
+   - adding the script "service.update(enable_app_insights=True)"
 
   ![](images/4_enable_logging.png)
 
-- Application insights is now enabled after running log.py
+   - Application insights is now enabled after running "log.py"
 
   ![](images/4_application_insigts_enabled.png)
 
@@ -123,7 +125,7 @@ through its REST API endpoint.
 
    #### 5.2. Running swagger.sh file
    The `swagger.sh` script is used to launch a local instance of **Swagger UI** to interactively explore and test the deployed model endpoint.
-   Originally, port 80 was used, but it was changed to 9000
+   Originally, port 80 was used, but it was changed to 9001
    
    ![](images/5.2_editing_swagger_bh.png)
 
@@ -139,7 +141,7 @@ through its REST API endpoint.
    ![](images/5.3_running_serve.png)
 
    #### 5.4. Exploring the Model with Swagger UI
-   After running the `swagger.sh` script, Swagger UI is accessible at: http://localhost:9000
+   After running the `swagger.sh` script, Swagger UI is accessible at: http://localhost:9001
    To interact with the deployed model via the Swagger UI interface, http://localhost:8000/swagger.json is entered and explored.
  
    ![](images/5.4_swagger_ui.png)
@@ -149,9 +151,18 @@ through its REST API endpoint.
    ![](images/5.4_swagger_ui_score.png)
    
    #### 5.5. Running endpoint.py file
+   Running the endpoint.py file prepares and executes inference requests against the deployed endpoint. To do this, 
+   - the scoring URI is updated
+   - the primary authentication key is provided to authorize access to the endpoint
+   - all input keys are aligned with the feature names defined in the dataset. This ensures that the data format fully matches the model’s expected input schema and allows successful request execution
    
    ![](images/5.5_editing_endpoint_py_1.png)
    ![](images/5.5_editing_endpoint_py_2.png)
+
+   **Final Result:**
+   After running endpoint.py, the inference results for both input samples returned “yes”. This indicates that the model evaluated both data instances positively according to its decision logic, confirming that the
+   endpoint is functioning correctly and that the input data is being processed as expected.
+   
    ![](images/5.5_running_endpoint_py.png)
   
 ### 6. Create and Publish a Pipeline
